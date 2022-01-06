@@ -1,3 +1,13 @@
+## Setup environment
+
+- Install the [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) **Visual Studio Code** extension
+
+## Start project
+
+- Open project as a Remote Container in _VSCode_:
+  - Press `F1` to open command pallete
+  - Run **Remote-Containers: Open Folder in Container** and open this project's root directory
+
 ## Sources
 - https://www.learnenough.com/ruby-on-rails-6th-edition-tutorial
 - https://www.tutorialspoint.com/ruby/
@@ -11,14 +21,14 @@
 ## Project directory structure
 
 - `app/` Core application (app) code, including models, views, controllers, and helpers
-- `app/`assets Applications assets such as Cascading Style Sheets (CSS) and images
+- `app/`Applications assets such as CSS and images
 - `bin/` Binary executable files
 - `config/` Application configuration
 - `db/` Database files
 - `doc/` Documentation for the application
 - `lib/` Library modules
 - `log/` Application log files
-- `public/` Data accessible to the public (e.g., via web browsers), such as error pages
+- `public/` Static files to be served online
 - `bin/rails` A program for generating code, opening console sessions, or starting a local server
 - `test/` Application tests
 - `tmp/` Temporary files
@@ -26,7 +36,6 @@
 - `Gemfile` Gem requirements for this app
 - `Gemfile.lock` A list of gems used to ensure that all copies of the app use the same gem versions
 - `config.ru` A configuration file for Rack middleware
-- `.gitignore` Patterns for files that should be ignored by Git
 
 ## Project files
 
@@ -379,7 +388,7 @@
     do_something # exception raised
   rescue
     # handles error
-    retry  # restart from beginning
+    retry  # run 'begin' again
   end
   ```
 
