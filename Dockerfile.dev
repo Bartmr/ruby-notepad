@@ -1,0 +1,14 @@
+FROM ruby:2.6.6-buster
+
+RUN apt-get update
+RUN apt-get upgrade -y
+
+# For commit messages
+RUN apt install -y nano
+
+# Install node
+RUN apt install -y curl
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
+RUN apt install -y nodejs
+
+RUN npm install -g yarn
