@@ -12,16 +12,21 @@
 - https://www.learnenough.com/ruby-on-rails-6th-edition-tutorial
 - https://www.tutorialspoint.com/ruby/
 
-## New Project
+## Rails
+
+### New Project
 
 - `echo "gem: --no-document" >> ~/.gemrc`
 - `gem install rails -v 6.1.4.1`
 - `rails _6.1.4.1_ new hello_app`
 
-## Project directory structure
+### Project directory structure
 
-- `app/` Core application (app) code, including models, views, controllers, and helpers
-- `app/`Applications assets such as CSS and images
+- `app/` Core application (app) code, including models, views, controllers, and helpers.
+  - `assets` Application assets such as CSS and images
+  - `models`
+  - `controllers`
+  - `views`
 - `bin/` Binary executable files
 - `config/` Application configuration
 - `db/` Database files
@@ -37,7 +42,7 @@
 - `Gemfile.lock` A list of gems used to ensure that all copies of the app use the same gem versions
 - `config.ru` A configuration file for Rack middleware
 
-## Project files
+### Project files
 
 - `config/routes.rb`: maps endpoints to controller methods
   - Add an entry like this: `{path} '{controller name without the '_controller part}#{method name}'`
@@ -49,10 +54,21 @@
     - PATCH /users/1 `update` update user with id 1
     - DELETE /users/1 `destroy` delete user with id 1
 
-## Commands
+### Commands
 
 - `rails generate scaffold {ModelName} {prop}:{type}`
 - `rails db:migrate`
+
+### Ways of doing stuff
+
+- Render a a response
+  ```ruby
+    # You can render HTTP status and JSON replies. They're arguments of 'render'
+    render status: :unprocessable_entity, json: { message: attachment.errors.details }
+
+    # Inside slim view
+    render 'backoffice/directory/file_name_without_any_extension', next_view_prop: @value_in_current_view, next_view_prop_2: @value_in_current_view, 
+  ```
 
 
 ## Ruby
@@ -235,6 +251,14 @@
       # concatenate expressions
       puts "Multiplication Value : #{24 * 60 * 60}"
     ```
+
+- Object literals
+  ```ruby
+  object_literal = { message: 'Hello' }
+
+  object_literal.message
+  object_literal['message']
+  ```
 
 - Arrays
   ```ruby
